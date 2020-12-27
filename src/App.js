@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import styles from "./App.module.scss";
+import ControlSidebar from "./ControlSidebar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
+import ReactionField from "./ReactionField";
+import { useState } from "react";
 
 function App() {
+  const [horizontalCount, setHorizontalCount] = useState(10);
+  const [verticalCount, setVerticalCount] = useState(10);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <div className={styles.sidebar}>
+        <ControlSidebar
+          horizontalCount={horizontalCount}
+          setHorizontalCount={setHorizontalCount}
+          verticalCount={verticalCount}
+          setVerticalCount={setVerticalCount}
+        />
+      </div>
+      <div className={styles.main}>
+        <ReactionField
+          horizontalCount={horizontalCount}
+          verticalCount={verticalCount}
+        />
+      </div>
     </div>
   );
 }

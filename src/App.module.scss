@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+.App {
+  display: flex;
+}
+
+.sidebar {
+  height: 100%;
+  flex: 1;
+}
+
+.main {
+  height: 100%;
+  flex: 3;
+}
