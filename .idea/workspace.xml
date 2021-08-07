@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4d1b0eaa-cae5-4a64-9b2a-aadbca0e6713" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ControlSidebar/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReactionField/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReactionField/ReactionObject/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReactionField/ReactionObject/reactionObjectStyle.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/fireFlippedEvent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getMidpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/isPointInRange.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlSidebar/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlSidebar/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReactionField/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReactionField/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Arvids\Documents\chain-reaction\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\pakla\Documents\projects\chain-reaction\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -72,6 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1608960186719</updated>
       <workItem from="1608960188144" duration="6334000" />
+      <workItem from="1628224058808" duration="5758000" />
+      <workItem from="1628302941009" duration="12757000" />
     </task>
     <servers />
   </component>
