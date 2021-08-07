@@ -18,6 +18,10 @@ export default function ControlSidebar(props) {
     setCirclePadding,
     mouseSize,
     setMouseSize,
+    blastRadius,
+    setBlastRadius,
+    flipChance,
+    setFlipChance,
   } = props;
   return (
     <>
@@ -60,6 +64,22 @@ export default function ControlSidebar(props) {
         max={100}
         min={5}
         onChange={(e) => setMouseSize(Number(e.target.value))}
+      />
+      Blast radius
+      <RangeSlider
+        value={blastRadius}
+        step={1}
+        max={100}
+        min={5}
+        onChange={(e) => setBlastRadius(Number(e.target.value))}
+      />
+      Chance to flip
+      <RangeSlider
+        value={flipChance}
+        step={0.01}
+        max={1}
+        min={0.01}
+        onChange={(e) => setFlipChance(Number(e.target.value))}
       />
     </>
   );

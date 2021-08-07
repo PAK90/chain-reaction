@@ -7,8 +7,8 @@ const createCustomEvent = (eventName, additionalData) => {
   return null;
 };
 
-export default function fireFlipEvent(additionalData) {
-  const flipEvent = createCustomEvent("flipped", {
+export default function fireFlipEvent(name, additionalData) {
+  const flipEvent = createCustomEvent(name, {
     ...additionalData,
   });
   document.dispatchEvent(flipEvent);

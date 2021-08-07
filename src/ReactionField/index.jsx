@@ -17,15 +17,16 @@ export default function ReactionField(props) {
     circleSize,
     mousePos,
     mouseSize,
+    blastRadius,
+    flipChance,
   } = props;
 
-  const [blastRadius, setBlastRadius] = useState(30);
   const [hoveredArray, setHoveredArray] = useState(
     times(verticalCount, (v) => v).map((vc) =>
       times(horizontalCount, (h) => h).map((hc) => "unhovered")
     )
   );
-  const [flippedArray, setFlippedArray] = useState(null);
+  // const [flippedArray, setFlippedArray] = useState(null);
   // console.log(hoveredArray);
 
   useEffect(() => {
@@ -58,60 +59,16 @@ export default function ReactionField(props) {
 
   const clearField = (e) => {
     e.stopPropagation(); // to keep the parent div from calling flipTheBird.
-    // setFlippedArray(null);
-
-    // const flipEvent = createCustomEvent("flipped", {
-    //   reset: true,
-    // });
-    // document.dispatchEvent(flipEvent);
-    fireFlipEvent({ reset: true });
+    fireFlipEvent("resetFlips");
   };
 
   const flipTheBird = () => {
-    // trial first; just flip all hovered ones
-    // let justFlipped = [];
-    // const newHovered = hoveredArray.map((row, vIx) =>
-    //   row.map((thing, hIx) => {
-    //     if (thing === "hovered") {
-    //       justFlipped.push([vIx, hIx]);
-    //     }
-    //     return thing === "hovered" ? "flipped" : "unhovered";
-    //   })
-    // );
-    // // find all things within blastRadius of the things that just flipped
-    //
-    // setFlippedArray(newHovered);
-
-    // try firing event?
-    // const flipEvent = createCustomEvent("flipped", {
-    //   eventSource: mousePos,
-    //   radiusOverride: mouseSize,
-    // });
-    // document.dispatchEvent(flipEvent);
-    fireFlipEvent({
+    fireFlipEvent("flipped", {
       eventSource: mousePos,
       radiusOverride: mouseSize,
     });
   };
 
-  // return (
-  //   <div onClick={(e) => console.log(e)}>
-  //     {times(verticalCount, (v) => v).map((vc) => (
-  //       <div style={{ display: "flex" }}>
-  //         {times(horizontalCount, (h) => h).map((hc) => (
-  //           <ReactionObject
-  //             circlePadding={circlePadding}
-  //             circleSize={circleSize}
-  //             key={`${hc}-${vc}`}
-  //             // FIXME; this probably... isn't ideal.
-  //             hovered={hoveredArray[vc][hc]}
-  //           />
-  //         ))}
-  //       </div>
-  //     ))}
-  //     <button>Reset field</button>
-  //   </div>
-  // );
   return (
     <div onClick={flipTheBird}>
       {hoveredArray.map((row, vIx) => (
@@ -121,8 +78,9 @@ export default function ReactionField(props) {
               circlePadding={circlePadding}
               circleSize={circleSize}
               key={`${hIx}-${vIx}`}
-              state={flippedArray?.[vIx]?.[hIx] || thing}
+              state={thing}
               blastRadius={blastRadius}
+              flipChance={flipChance}
               position={{ x: hIx, y: vIx }}
             />
           ))}
