@@ -18,11 +18,17 @@ export default function ReactionObject(props) {
   // const flipHandler = useCallback(
   const flipHandler = (e) => {
     // console.log("flipper! ", e.detail);
-    const { eventSource, radiusOverride, reset } = e.detail.additionalData;
+    const {
+      eventSource,
+      radiusOverride,
+      chanceOverride,
+      reset,
+    } = e.detail.additionalData;
     if (reset) {
       setFlipped(false);
     } else {
       const radiusToUse = radiusOverride || blastRadius;
+      const chanceToUse = chanceOverride || flipChance;
 
       const midpoint = getMidpoint(
         position.x,
@@ -38,7 +44,7 @@ export default function ReactionObject(props) {
         radiusToUse
       );
 
-      if (isInRadius && Math.random() < flipChance) {
+      if (isInRadius && Math.random() < chanceToUse) {
         document.removeEventListener("flipped", flipHandler);
         setTimeout(() => {
           setFlipped(true);
@@ -50,14 +56,20 @@ export default function ReactionObject(props) {
   //   [circleSize, circlePadding, blastRadius]
   // );
   useEffect(() => {
+    // document.removeEventListener("flipped", flipHandler);
     document.addEventListener("flipped", flipHandler);
     return () => document.removeEventListener("flipped", flipHandler);
   }, [circleSize, circlePadding, blastRadius, flipChance]);
 
+  const resetFlip = () => {
+    setFlipped(false);
+    //FIXME: this adds the original one which is tied to default settings.
+    document.addEventListener("flipped", flipHandler);
+  };
+
   useEffect(() => {
-    document.addEventListener("resetFlips", () => setFlipped(false));
-    return () =>
-      document.removeEventListener("resetFlips", () => setFlipped(false));
+    document.addEventListener("resetFlips", resetFlip);
+    return () => document.removeEventListener("resetFlips", resetFlip);
   }, []);
 
   return (

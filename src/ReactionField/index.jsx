@@ -66,6 +66,7 @@ export default function ReactionField(props) {
     fireFlipEvent("flipped", {
       eventSource: mousePos,
       radiusOverride: mouseSize,
+      chanceOverride: 1,
     });
   };
 
